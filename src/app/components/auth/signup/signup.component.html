@@ -20,9 +20,20 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input type="password" matInput placeholder="Repeat password"  formControlName="confirmPassword">
-      <mat-error  *ngIf="f.confirmPassword.errors && f.confirmPassword.errors.required">Password must not be empty</mat-error>
-      <mat-error  *ngIf="f.confirmPassword.errors && f.confirmPassword.errors.mustMatch"> should match with password</mat-error>
+      <input type="password" matInput placeholder="Repeat password"  formControlName="confirm_password">
+      <mat-error  *ngIf="f.confirm_password.errors && f.confirm_password.errors.required">Password must not be empty</mat-error>
+      <mat-error  *ngIf="f.confirm_password.errors && f.confirm_password.errors.mustMatch"> should match with password</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Job Category" formControlName="job_category">
+      <mat-error *ngIf="f.job_category.errors && f.job_category.errors.required">Field must not be empty.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Experience Level" formControlName="experience_level">
+      <mat-error *ngIf="f.experience_level.errors && f.experience_level.errors.required">Field must not be empty.</mat-error>
     </mat-form-field>
 
     <mat-form-field>

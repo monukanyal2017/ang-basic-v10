@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // require both
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -27,7 +28,8 @@ const data = [
     MatDialogModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
     ]
 @NgModule({
     imports: data,

@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 //import { AuthConstants } from '../auth.constants';
 import { Dialogbox } from '../../dialogbox/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ApiService } from '../../../services/api-service';
+import { AlertService } from 'src/app/services/alert-service';
+
+// testing observable
+// import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
@@ -18,12 +23,14 @@ export class LoginComponent implements OnInit {
   status: any;
   loginForm:FormGroup;
   submitted: Boolean = false;
+  // observable: Observable<any>;
 
   constructor(
-    private authService: AuthService,
+    private apiService: ApiService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private alertService: AlertService) { }
 
   ngOnInit(): void {
     this.info = "";
@@ -53,9 +60,10 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
         return;
     }
-
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
+    this.apiService.loginAndSetToken(this.loginForm.value).subscribe((res)=>{
+       this.alertService.success('user authenticated!');
+       this.router.navigate(['']);
+    })
   }
   // login() {
   //   const val = form.value;

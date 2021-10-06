@@ -7,9 +7,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { Dialogbox } from './components/dialogbox/dialog.component';
-import { ConfirmaccountComponent } from './components/auth/confirmaccount/confirmaccount.component';
-import { ChangepasswordComponent } from './components/auth/forgetpassword/changepassword/changepassword.component';
-import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
+import { ConfirmAccountComponent } from './components/auth/confirmaccount/confirm-account.component';
+import { ForgetPasswordComponent } from './components/auth/forgetpassword/forget-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
@@ -19,7 +18,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';  //ngForm
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './components/auth/auth.service';
+import { AlertService } from './services/alert-service';
+import { ApiService } from './services/api-service';
+import { HttpService } from './services/http-service';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,8 @@ import { AuthService } from './components/auth/auth.service';
     LoginComponent,
     SignupComponent,
     Dialogbox,
-    ForgetpasswordComponent,
-    ChangepasswordComponent,
-    ConfirmaccountComponent,
+    ForgetPasswordComponent,
+    ConfirmAccountComponent,
     HomeComponent,
     HeaderComponent,
     SidenavListComponent
@@ -44,7 +44,7 @@ import { AuthService } from './components/auth/auth.service';
     MaterialModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [HttpService, ApiService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
