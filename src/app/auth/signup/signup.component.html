@@ -1,6 +1,6 @@
 <section class="signup-form">
   <form fxLayout="column" [formGroup]="signupForm" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="onSubmit()">
-   
+    <img src="../../../assets/digiresume-green.png" width="20%">
     <mat-form-field>
       <input type="text" matInput placeholder="Your Name" formControlName="name">
       <mat-error *ngIf="f.name.errors && f.name.errors.required">Field must not be empty.</mat-error>
