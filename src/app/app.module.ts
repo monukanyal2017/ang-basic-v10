@@ -4,22 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { Dialogbox } from './dialogbox/dialog.component';
-// import { ConfirmaccountComponent } from './auth/confirmaccount/confirmaccount.component';
-import { ChangepasswordComponent } from './auth/forgetpassword/changepassword/changepassword.component';
-import { ForgetpasswordComponent } from './auth/forgetpassword/forgetpassword.component';
-import { HomeComponent } from './home/home.component';
-import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-import { HeaderComponent } from './navigation/header/header.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { Dialogbox } from './components/dialogbox/dialog.component';
+import { ConfirmaccountComponent } from './components/auth/confirmaccount/confirmaccount.component';
+import { ChangepasswordComponent } from './components/auth/forgetpassword/changepassword/changepassword.component';
+import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
+import { HomeComponent } from './components/home/home.component';
+import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
+import { HeaderComponent } from './components/navigation/header/header.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';  //ngForm
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './auth/auth.service';
+import { AuthService } from './components/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { AuthService } from './auth/auth.service';
     Dialogbox,
     ForgetpasswordComponent,
     ChangepasswordComponent,
-    // ConfirmaccountComponent,
+    ConfirmaccountComponent,
     HomeComponent,
     HeaderComponent,
     SidenavListComponent

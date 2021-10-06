@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component'
-import {LoginComponent} from './auth/login/login.component';
-import {SignupComponent} from './auth/signup/signup.component';
-import { ForgetpasswordComponent } from './auth/forgetpassword/forgetpassword.component';
+import {HomeComponent} from './components/home/home.component'
+import {LoginComponent} from './components/auth/login/login.component';
+import {SignupComponent} from './components/auth/signup/signup.component';
+import { ForgetpasswordComponent } from './components/auth/forgetpassword/forgetpassword.component';
+import { ChangepasswordComponent } from './components/auth/forgetpassword/changepassword/changepassword.component';
+import { ConfirmaccountComponent } from './components/auth/confirmaccount/confirmaccount.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'register', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'resetpassword', component: ForgetpasswordComponent },
+  { path: 'recoverypassword', component: ChangepasswordComponent },
+  { path: 'confirm', component: ConfirmaccountComponent },
 ];
 
 @NgModule({

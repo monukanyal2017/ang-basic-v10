@@ -3,16 +3,15 @@
     <img src="../../../assets/digiresume-green.png" width="20%">
     <mat-form-field>
       <input type="email" matInput placeholder="Email Address" formControlName="email">
-      <mat-error *ngIf="f.email.errors && f.email.errors.required">Field must not be empty.</mat-error>
-      <mat-error *ngIf="f.email.errors && f.email.errors.email">E-Mail is invalid.</mat-error>
+      <mat-error >Valid Email is required</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <input type="password" matInput placeholder="Password" formControlName="password">
-      <mat-error *ngIf="f.password.errors && f.password.errors.required">Password must not be empty.</mat-error>
+      <mat-error>Password must not be empty.</mat-error>
     </mat-form-field>
     <button type="submit" mat-raised-button color="primary">Login</button>
-    <a routerLink="/resetpassword" mat-raised-button color="warn">Forget Password?</a>
+    <a routerLink="/resetpassword" color="warn">Forget Password?</a>
   </form>
   
 </section>

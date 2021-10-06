@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -23,15 +23,14 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    public dialog: MatDialog,
-    private formBuilder: FormBuilder) { }
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.info = "";
     this.status = "";
-    this.loginForm = this.formBuilder.group({
-      email:['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
+    this.loginForm = new FormGroup({
+      email: new FormControl('',[Validators.required, Validators.email]),
+      password: new FormControl('',[Validators.required]),
     })
   }
   openDialog(): void {
